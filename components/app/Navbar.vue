@@ -1,14 +1,18 @@
 <template>
   <nav
-    class="dark-highlight flex justify-between items-center py-2 fixed z-50 top-0 right-0 left-0"
+    class="dark-highlight flex justify-between items-center fixed z-50 md:py-2 md:px-20 gap-20 w-full navbar"
   >
-    <NuxtLink to="/" class="flex items-center py-4"
-      ><span class="logo-brand"
-        >NETFLIX<span class="logo-brand-light text-secondary opacity-80 ml-0.5"
-          >nuxt</span
-        ></span
-      >
+    <NuxtLink to="/" class="flex items-center py-4">
+      <img src="@/images/moovie-time-logo.png" class="logo-brand" />
     </NuxtLink>
+
+    <label class="flex flex-row gap-8 input">
+      <img src="@/images/find-movie-icon.png" class="w-6 h-6" />
+      <input type="search" class="input" required placeholder="Find Movie"/>
+      <div class="flex align-items:center w-4">
+        <svg class="w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></g></svg>
+      </div>
+    </label>
 
     <button class="mobile-menu-btn mr-4 mt-2 btn btn-ghost md:hidden">
       <svg
@@ -27,16 +31,30 @@
       </svg>
     </button>
 
-    <div class="gap-2 mr-2 hidden md:flex">
+    
+    <div class="mr-2 hidden md:flex">
+      <div class="hidden md:flex items-center">
+        <img src="@/images/categories-icon.png" class="w-6 h-6" />
+        <NuxtLink
+          to="/signin"
+          class="signup-button btn btn-secondary btn-ghost hover:bg-inherit btn-sm pr-8 rounded-none"
+          >Categories</NuxtLink
+        >
+      </div>
       <NuxtLink
         to="/signin"
-        class="signup-button btn btn-secondary btn-ghost hover:bg-inherit btn-sm px-8 rounded-none"
-        >sign in</NuxtLink
+        class="signup-button btn btn-secondary btn-ghost hover:bg-inherit btn-sm px-4 rounded-none"
+        >Movies</NuxtLink
       >
       <NuxtLink
-        to="/signup"
-        class="signup-button btn btn-secondary btn-sm px-8 rounded-none"
-        >sign up now</NuxtLink
+        to="/signin"
+        class="signup-button btn btn-secondary btn-ghost hover:bg-inherit btn-sm px-4 rounded-none"
+        >TV Shows</NuxtLink
+      >
+      <NuxtLink
+        to="/signin"
+        class="signup-button btn btn-secondary btn-ghost hover:bg-inherit btn-sm px-4 rounded-none"
+        >Login</NuxtLink
       >
     </div>
   </nav>
@@ -48,27 +66,37 @@
   font-size: 0.8rem;
   color: white;
   height: 2.4rem;
-  font-family: Gilroy-Bold !important;
+  font-weight: 600;
+  font-family: Montserrat !important;
 }
 
 .dark-highlight {
   background: rgba(0, 0, 0, 0.3);
 }
 
-.logo-brand {
-  font-family: Gilroy-Bold;
-  letter-spacing: -0.1rem;
-  font-size: 2.3rem;
-  line-height: 0%;
-  margin-left: 0.8rem;
-  color: white;
+.input {
+  background: #242830 !important;
+  height: 36px;
 }
 
-.logo-brand-light {
-  font-family: Gilroy-Regular;
-  letter-spacing: -0.2rem;
-  font-size: 3.2rem;
-  line-height: 0%;
+.logo-brand {
+  color: white;
+  width: 112px;
+  height: auto;
+}
+
+.navbar {
+  background: #292E36;
+  height: 66px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 8px;
+}
+
+.search-icon {
+  width: 30px;
 }
 
 .mobile-menu-btn:hover,
