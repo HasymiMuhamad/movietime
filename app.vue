@@ -1,7 +1,7 @@
 <template>
   <div>
-    <AppAnimatedBackground />
     <AppNavbar />
+    <AppAnimatedBackground />
     <NuxtPage />
     <AppFooter />
   </div>

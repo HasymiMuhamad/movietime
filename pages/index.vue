@@ -2,10 +2,10 @@
   <div>
     <Hero />
     <EnjoyOnYourTv />
-    <DownloadShows />
+    <!-- <DownloadShows />
     <WatchEverywhere />
     <CreateProfilesForKids />
-    <FrequentlyAskedQuestions />
-    <GetStarted />
+    <FrequentlyAskedQuestions /> -->
+    <!-- <GetStarted /> -->
   </div>
 </template>

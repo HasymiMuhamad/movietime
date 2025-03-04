@@ -23,7 +23,7 @@ export default defineNuxtConfig({
     },
   },
   meta: {
-    title: "NETFLIX Nuxt3 - a Cai Toy clone...",
+    title: "Moovie Time - Your Best Partner",
   },
   gsap: {
     extraPlugins: {

@@ -4,37 +4,43 @@ import { FooterHeading, FooterLinks, CopyrightText } from "~/constants"
 
 <template>
   <footer
-    class="footer footer-center p-4 md:p-8 lg:p-12 bg-base-100 text-base-content"
+    class="container items-strength footer footer-center py-[65px] bg-base-100 text-base-content flex flex-row justify-between"
   >
-    <p>{{ FooterHeading }}</p>
+    <p class="copyright">©  2021 MoovieTime. All rights reserved.</p>
+    <img src="@/images/moovie-logo-grey.png" class="logo-brand" />
+    <p class="buildwidth">Made with NuxtJs</p>
 
-    <!-- <div class="flex flex-wrap justify-center flex-col md:flex-row">
-      <NuxtLink
-        to="/"
-        class="footer-links btn btn-ghost hover:bg-inherit hover:text-white"
-        v-for="Link in FooterActions"
-        >{{ Link }}</NuxtLink
-      >
-    </div> -->
-    <div class="flex flex-wrap justify-center text-xs">
-      <NuxtLink
-        to="/"
-        class="link link-hover whitespace-nowrap m-2"
-        v-for="Link in FooterLinks"
-        >{{ Link }}
-      </NuxtLink>
-    </div>
-    <div>
-      <p class="text-xs text-primary/80">{{ CopyrightText }}</p>
-    </div>
   </footer>
 </template>
 
 <style>
+.bg-blue {
+  background: blue;
+}
+
 .btn {
   font-family: Gilroy-Bold;
   letter-spacing: 0.2rem;
   font-size: 0.8rem;
+}
+
+.copyright {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.85px;
+  letter-spacing: 0%;
+  color: #929292;
+}
+
+.buildwidth {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15.85px;
+  letter-spacing: 0%;
+  text-align: right;
+  color: #929292;
 }
 
 .footer-links {
