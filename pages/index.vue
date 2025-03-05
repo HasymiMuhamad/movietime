@@ -2,9 +2,10 @@
   <div>
     <Hero />
     <EnjoyOnYourTv />
-    <!-- <DownloadShows /> -->
-    <!-- <WatchEverywhere /> -->
-    <!-- <CreateProfilesForKids />
+
+    <!-- <DownloadShows />
+    <WatchEverywhere />
+    <CreateProfilesForKids />
     <FrequentlyAskedQuestions />
     <GetStarted /> -->
   </div>

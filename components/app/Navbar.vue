@@ -43,12 +43,12 @@
           >
         </div>
         <NuxtLink
-          to="/signin"
+          to="/movies"
           class="signup-button btn btn-secondary btn-ghost hover:bg-inherit btn-sm px-4 rounded-none"
           >Movies</NuxtLink
         >
         <NuxtLink
-          to="/signin"
+          to="/tvshows"
           class="signup-button btn btn-secondary btn-ghost hover:bg-inherit btn-sm px-4 rounded-none"
           >TV Shows</NuxtLink
         >

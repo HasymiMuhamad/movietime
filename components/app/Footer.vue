@@ -4,12 +4,13 @@ import { FooterHeading, FooterLinks, CopyrightText } from "~/constants"
 
 <template>
   <footer
-    class="container items-strength footer footer-center py-[65px] bg-base-100 text-base-content flex flex-row justify-between"
+    class="items-strength footer footer-center py-[65px] bg-base-100 text-base-content"
   >
-    <p class="copyright">©  2021 MoovieTime. All rights reserved.</p>
-    <img src="@/images/moovie-logo-grey.png" class="logo-brand" />
-    <p class="buildwidth">Made with NuxtJs</p>
-
+    <div class="container flex flex-row justify-between">
+      <p class="copyright">©  2021 MoovieTime. All rights reserved.</p>
+      <img src="@/images/moovie-logo-grey.png" class="logo-brand" />
+      <p class="buildwidth">Made with NuxtJs</p>
+    </div>
   </footer>
 </template>
 

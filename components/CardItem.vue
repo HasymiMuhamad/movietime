@@ -1,15 +1,22 @@
 <script setup>
 
+const router = useRouter()
+
 const props = defineProps({
   dataImage: Object
 });
 const { dataImage } = props;
 
+const handleShowDetail = (e) => {
+  console.log('isklik', e)
+  router.push({ path : `/detail/${e}` })
+}
+
 </script>
 
 
 <template>
-  <div class="item-base">
+  <div class="item-base" @click="handleShowDetail(dataImage?.id)">
     <div class="flex items-end justify-end">
       <div class="flex justify-center item-rate items-center">{{ Math.round(dataImage?.rating * 10) / 10 }}</div>
     </div>

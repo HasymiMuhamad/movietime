@@ -53,48 +53,6 @@ const images = detailData?.value?.results?.map( itm => {
   min-height: 800px;
 }
 
-.btn-primary-lite {
-  min-width: 107px;
-  min-height: 32px;
-  width: auto;
-  height: auto;
-  border-radius: 32px;
-  background: #FF0000;
-  color: #E5E5E5;
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17.07px;
-  letter-spacing: 0%;
-}
 
-.btn-secondary-lite {
-  min-width: 107px;
-  min-height: 32px;
-  width: auto;
-  height: auto;
-  border-radius: 32px;
-  background: #00000033;
-  color: #E5E5E5;
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 17.07px;
-  letter-spacing: 0%;
-}
-
-.red-line {
-  width: 112px;
-  height: 6px;
-  background: #E74C3C;
-}
-
-.headline {
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29.26px;
-  letter-spacing: 0%;
-}
 
 </style>
