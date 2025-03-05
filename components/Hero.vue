@@ -4,7 +4,7 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import { AuthTokenOptions, BaseUrlAPI } from "~/constants"
 
 
-const { data: detailData} = await useFetch(BaseUrlAPI, AuthTokenOptions);
+const { data: detailData } = await useFetch(BaseUrlAPI, AuthTokenOptions);
 
 const images = detailData?.value?.results?.map( itm => {
   return {
