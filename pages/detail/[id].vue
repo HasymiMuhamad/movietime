@@ -106,17 +106,58 @@ const getImageUrl = (e) => {
             <div class="container flex review-box pt-[150px]">
                 <p class="info-overview__headline ">REVIEWS</p>
                 <div class="review-list mt-[25px] gap-[32px] flex flex-row">
-                    <div class="review-item">
-                        test
+                    <div class="review-item flex flex-col">
+                        <div class="flex justify-between w-[100%] mb-[31px]">
+                            <div class="flex flex-row gap-4">
+                                <div class="w-[48px] h-[48px] review-logo"></div>
+                                <div class="flex flex-col justify-around">
+                                    <p class="review-name">SWITCH.</p>
+                                    <p class="review-date">December 18, 2020</p>
+                                </div>
+                            </div>
+                            <div class="score-box">
+                                <div class="flex flex-row gap-[8px]">
+                                    <img src="@/images/star.png" class="w-[17px] h-[17px] mt-[7px]" />
+                                    <p class="score-star">7.0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="review-desc">
+                                It isn't as easy as saying 'Wonder Woman 1984' is a good or bad movie. The pieces are there, and there are moments I adore, but it does come across as a bit of a mess, even though the action sequences are breathtaking. If you're a fan of the original film, you'll be more willing to take the ride, but for those more indifferent, it may be a bit of a blander sit. If you can and are planning to watch it, the theatrical experience is the way to go - there is nothing like seeing these stunning sets, fun action scenes and hearing Zimmer's jaw-dropping score like on the big screen. - Chris dos Santos... <span class="text-[#e74b3c] underline underline-offset-[8]">read the rest.</span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="review-item">
-                        test
+                    <div class="review-item flex flex-col">
+                        <div class="flex justify-between w-[100%] mb-[31px]">
+                            <div class="flex flex-row gap-4">
+                                <div class="w-[48px] h-[48px] review-logo"></div>
+                                <div class="flex flex-col justify-around">
+                                    <p class="review-name">SWITCH.</p>
+                                    <p class="review-date">December 18, 2020</p>
+                                </div>
+                            </div>
+                            <div class="score-box">
+                                <div class="flex flex-row gap-[8px]">
+                                    <img src="@/images/star.png" class="w-[17px] h-[17px] mt-[7px]" />
+                                    <p class="score-star">7.0</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="review-desc">
+                                It isn't as easy as saying 'Wonder Woman 1984' is a good or bad movie. The pieces are there, and there are moments I adore, but it does come across as a bit of a mess, even though the action sequences are breathtaking. If you're a fan of the original film, you'll be more willing to take the ride, but for those more indifferent, it may be a bit of a blander sit. If you can and are planning to watch it, the theatrical experience is the way to go - there is nothing like seeing these stunning sets, fun action scenes and hearing Zimmer's jaw-dropping score like on the big screen. - Chris dos Santos... <span class="text-[#e74b3c] underline underline-offset-[8]">read the rest.</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="recommendation flex items-center justify-center">
-            <div class="container grid grid-cols-5 gap-4">
+        <div class="recommendation flex flex-col">
+            <div class="container pt-[28px]">
+                <p>RECOMMENDATION MOVIES</p>
+            </div>
+            <div class="container grid grid-cols-5 gap-4 flex items-center justify-center pb-[50px]">
                 <div v-for="image in imagesFirst" :key="image.id">
                     <CardItem :dataImage="image" />
                 </div>
@@ -263,9 +304,66 @@ const getImageUrl = (e) => {
 .review-item {
     width: 582px;
     height: 284px;
+    padding: 24px;
     border-radius: 14px;
     background: #F9F9F9;
     box-shadow: 0px 4px 4px 0px #0000001A;
+    color: black;
+}
+
+.review-desc {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 19.5px;
+    letter-spacing: 0%;
+}
+
+.review-logo {
+    background: #cbcccd;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-name {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17.07px;
+    letter-spacing: 0%;
+    color: #1E232A;
+}
+
+.review-date {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.63px;
+    letter-spacing: 0%;
+    color: #666666;
+}
+
+.score-box {
+    padding: 6px;
+    width: 97px;
+    height: 52px;
+    background: #C4C4C447;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-star {
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43.88px;
+    letter-spacing: 0%;
+    color: #000000;
 }
 
 .recommendation {
