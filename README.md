@@ -12,6 +12,8 @@ git clone git@github.com:HasymiMuhamad/movietime.git
 ```
 Run on Local : 
 
+Run on Node JS version v18.0.0 :
+
 1. npm install
 2. npm run dev
 
