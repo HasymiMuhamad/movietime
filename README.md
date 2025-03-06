@@ -12,10 +12,12 @@ git clone git@github.com:HasymiMuhamad/movietime.git
 ```
 Run on Local : 
 
-Run on Node JS version v18.0.0 :
+Run on Node JS version v18.0.0 or v18.20.7 and NPM version 8.19.4 :
 
-1. npm install
-2. npm run dev
+1. git clone git@github.com:HasymiMuhamad/movietime.git
+2. npm install
+3. npm run dev
+4. please reload the page if the movies item not shown or navigate to /movies page.
 
 ```
 
