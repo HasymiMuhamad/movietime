@@ -24,6 +24,8 @@ export const FooterHeading = "Questions? Call 1-844-505-2993"
 export const CopyrightText =
   "© 2022 NetflixNuxt is a UI Clone/Study site by Cai Toy..."
 
+
+// In Production Mode : API Key will be in ENV
 export const AuthTokenOptions = {
   method: 'GET',
   headers: {
@@ -37,6 +39,7 @@ export const DetailUrlAPI = (e) => {
   return `https://api.themoviedb.org/3/movie/${e}?language=en-US`;
 }
 
+// In Production Mode : API Key will be in ENV
 export const DetailTokenOptions = {
   method: 'GET',
   headers: {
