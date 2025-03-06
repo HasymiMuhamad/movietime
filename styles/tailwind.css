@@ -104,6 +104,7 @@ body {
   font-size: 14px;
   line-height: 17.07px;
   letter-spacing: 0%;
+  margin-right: 12px;
 }
 
 .btn-secondary-lite {
@@ -119,6 +120,8 @@ body {
   font-size: 14px;
   line-height: 17.07px;
   letter-spacing: 0%;
+  padding-right: 11px;
+  padding-left: 9px;
 }
 
 .container {
