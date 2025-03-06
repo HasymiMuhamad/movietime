@@ -89,7 +89,7 @@ const listOfGenres = [
         </div>
 
         <div class="col-span-9 ...">
-          <div class="grid grid-cols-4 gap-[20px]">
+          <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-[20px]">
             <div v-for="image in images" :key="image.id">
               <CardItem :dataImage="image" />
             </div>

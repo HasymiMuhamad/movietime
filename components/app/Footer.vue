@@ -6,7 +6,7 @@ import { FooterHeading, FooterLinks, CopyrightText } from "~/constants"
   <footer
     class="items-strength footer footer-center py-[65px] bg-base-100 text-base-content"
   >
-    <div class="container flex flex-row justify-between">
+    <div class="container footer-width justify-between">
       <p class="copyright">©  2021 MoovieTime. All rights reserved.</p>
       <img src="@/images/moovie-logo-grey.png" class="logo-brand" />
       <p class="buildwidth">Made with NuxtJs</p>

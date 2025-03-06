@@ -144,7 +144,7 @@ onMounted(async () => {
             <div class="container pt-[28px]">
                 <p>RECOMMENDATION MOVIES</p>
             </div>
-            <div class="container grid grid-cols-5 gap-4 flex items-center justify-center pb-[50px]">
+            <div class="container grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 gap-4 flex items-center justify-center pb-[50px] overflow-x-scroll">
                 <div v-for="image in imagesFirst" :key="image.id">
                     <CardItem :dataImage="image" />
                 </div>
@@ -158,7 +158,6 @@ onMounted(async () => {
     width: 100%;
     height: 400px;
     object-fit: fill;
-    min-width: 1028px;
     opacity: 0.3;
 }
 
@@ -167,11 +166,6 @@ onMounted(async () => {
     height: 330px;
 }
 
-.info {
-    width: 100%;
-    height: 80px ;
-    background: #181919;
-}
 
 .info-title {
     padding: 18px 0px 18px 33px ;
@@ -214,10 +208,6 @@ onMounted(async () => {
     gap: 15px;
 }
 
-.info-votes {
-    display: flex;
-    flex-direction: column;
-}
 
 .info-votes__score {
     font-family: Montserrat;
@@ -288,9 +278,15 @@ onMounted(async () => {
     flex-direction: column;
 }
 
+.review-list {
+    display: flex;
+    overflow: scroll;
+    max-height: 350px;
+}
+
 .review-item {
     width: 582px;
-    height: 284px;
+    height: auto;
     padding: 24px;
     border-radius: 14px;
     background: #F9F9F9;

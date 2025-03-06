@@ -5,6 +5,7 @@ import { defineNuxtConfig } from "nuxt";
 // <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
+
 export default defineNuxtConfig({
   app: {
     head: {
@@ -12,6 +13,7 @@ export default defineNuxtConfig({
         { rel: "icon", type: "image/svg+xml", href: "/ac-icon.svg?v=2" },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap' }
       ],
+      viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
     },
   },
   modules: ["@nuxt/content"],

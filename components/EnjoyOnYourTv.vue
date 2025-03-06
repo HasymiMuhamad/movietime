@@ -34,7 +34,7 @@ const images = detailData?.value?.results?.map( itm => {
         <button class="btn-secondary-lite">Release Date</button>
       </div>
     </div>
-    <div class="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 xs:grid-cols-1 gap-7 flex">
+    <div class="grid 2xl:grid-cols-5 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-7 flex">
       <div v-for="image in images" :key="image.id">
         <CardItem :dataImage="image" />
       </div>
