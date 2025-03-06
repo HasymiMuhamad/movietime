@@ -20,4 +20,5 @@ Run on Node JS version v18.0.0 or v18.20.7 and NPM version 8.19.4 :
 4. please reload the page if the movies item not shown or navigate to /movies page.
 
 ```
-
+Home Page :
+![alt text](https://drive.google.com/file/d/1AWDz8zOxIqyng5-pXUhuka8yxhNSZ3Da/view?usp=sharing)
