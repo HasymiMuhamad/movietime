@@ -1,11 +1,19 @@
-# NETFLIX with Nuxt 3
+# Movietime with Nuxt 3
 
-A Cai Toy clone...
+by Muhamad Hasymi Hilman
 
-[NETFLIX with Nuxt 3](https://netflix-nuxt.netlify.app/)
+[Movietime with Nuxt 3](https://movietime-nuxt.netlify.app/)
 
 ```
-git clone https://github.com/caicodes/netflix-nuxt.git
+git clone git@github.com:HasymiMuhamad/movietime.git
+
+```
+
+```
+Run on Local : 
+
+1. npm install
+2. npm run dev
 
 ```
 
