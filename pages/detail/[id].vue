@@ -1,12 +1,13 @@
 <script setup>
+import { nextTick } from 'vue';
 
-import { AuthTokenOptions, BaseUrlAPI } from "~/constants"
+import { AuthTokenOptions, BaseUrlAPI, DetailUrlAPI, DetailTokenOptions } from "~/constants"
 
 const route = useRoute();
+const { data: recommendationFilmList } = await useFetch(BaseUrlAPI, AuthTokenOptions);
+const { data: detailDataFilm, refresh } = await useFetch(DetailUrlAPI(route?.params?.id), DetailTokenOptions);
 
-const { data: detailData } = await useFetch(BaseUrlAPI, AuthTokenOptions);
-
-const images = detailData?.value?.results?.map( itm => {
+const images = recommendationFilmList?.value?.results?.map( itm => {
   return {
     id : itm?.id,
     url: `https://image.tmdb.org/t/p/w710_and_h400_multi_faces${itm?.backdrop_path}`,
@@ -18,84 +19,70 @@ const images = detailData?.value?.results?.map( itm => {
 });
 
 const imagesFirst = images.slice(0, 5);
-
-const url = `https://api.themoviedb.org/3/movie/${route.params.id}?language=en-US`;
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2YWI4ZTU5OTY4YjM5NDgyMTVhMGQzMzEwOTE4NGRmYiIsIm5iZiI6MTc0MTA2NzM3Ny43NTYsInN1YiI6IjY3YzY5NDcxM2E5NzFkZDJjMGMwNzMyMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.35ECTIn-eJCH3-oWu8pGmhBCqrKA2Kz6D2_38GUikYg'
-  }
-};
-
-const { data: detailDataFilm } = await useFetch(url, options);
-
-const { data: filmDetail, pending, error } = useAsyncData(
-  'filmDetail',
-  () => useFetch(url, options)
-)
-
-const imageBanner = () => {
-    return {
-        imgBackdrop :`https://image.tmdb.org/t/p/w710_and_h400_multi_faces${detailDataFilm?.value?.backdrop_path}`
-    }
-};
-
-const imageUrl  =`https://image.tmdb.org/t/p/w710_and_h400_multi_faces${detailDataFilm?.value?.backdrop_path}`;
-
 const getImageUrl = (e) => {
     return `https://image.tmdb.org/t/p/w710_and_h400_multi_faces${e}`
 }
+
+
+onMounted(async () => {
+    await nextTick();
+    await refresh();
+});
+
 
 </script>
 
 <template>
     <div class="mt-[75px]">
         <div  class="banner-detail">
-            <img :src="imageUrl" class="img-banner"/>
+            <img :src="getImageUrl(detailDataFilm?.backdrop_path)" class="img-banner"/>
         </div>
         <div class="info">
             <div class="container z-10 flex flex-row">
-                <img :src="imageUrl" class="img-iconic mt-[-126px] z-2"/>
+                <img :src="getImageUrl(detailDataFilm?.backdrop_path)" class="img-iconic mt-[-126px] z-2"/>
                 <div class="flex flex-column mt-[-126px]">
                     <div class="info-title">
-                        <p class="info-title__year">2020</p>
-                        <p class="info-title__title">Wonder Woman 1984</p>
-                        <p class="info-title__genre">Fantasy, Action, Adventure</p>
+                        <p class="info-title__year">{{ detailDataFilm?.release_date?.split("-")[0] }}</p>
+                        <p class="info-title__title">{{ detailDataFilm?.original_title }}</p>
+                        <p class="info-title__genre">{{ `${detailDataFilm?.genres[0]?.name}` }}</p>
                         <div class="info-film">
                             <div class="info-score">
                                 <img src="@/images/star.png" class="rate-score" />
                             </div>
-                            <p class="info-rating">7.0</p>
+                            <p class="info-rating">{{ Math.round(detailDataFilm?.vote_average * 10) / 10 }}</p>
                             <div class="info-votes">
                                 <p class="info-votes__score">user score</p>
-                                <p class="info-votes__votes">3621 votes</p>
+                                <p class="info-votes__votes">{{ detailDataFilm?.vote_count }} votes</p>
                             </div>
                             <div class="divider divider-horizontal divider-primary"></div>
                             <div class="info-votes">
                                 <p class="info-votes__score">Status</p>
-                                <p class="info-votes__votes">Released</p>
+                                <p class="info-votes__votes">{{ detailDataFilm?.status }}</p>
                             </div>
                             <div class="divider divider-horizontal divider-primary"></div>
                             <div class="info-votes">
                                 <p class="info-votes__score">Language</p>
-                                <p class="info-votes__votes">English</p>
+                                <p class="info-votes__votes">{{ detailDataFilm?.spoken_languages[0]?.english_name }}</p>
                             </div>
                             <div class="divider divider-horizontal divider-primary"></div>
                             <div class="info-votes">
                                 <p class="info-votes__score">Budget</p>
-                                <p class="info-votes__votes">$200,000,000.00</p>
+                                <p class="info-votes__votes">{{ (detailDataFilm?.revenue)?.toLocaleString('en-US', {
+                                    style: 'currency',
+                                    currency: 'USD',
+                                    }) }}
+                                </p>
                             </div>
                             <div class="divider divider-horizontal divider-primary"></div>
                             <div class="info-votes">
                                 <p class="info-votes__score">production</p>
-                                <p class="info-votes__votes">DC Entertainment</p>
+                                <p class="info-votes__votes">{{ detailDataFilm?.production_companies[0]?.name }}</p>
                             </div>
                         </div>
                         <div class="info-overview">
                             <p class="info-overview__headline">OVERVIEW</p>
                             <p class="info-overview__description">
-                                Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s and finds a formidable foe by the name of the Cheetah.
+                                {{ detailDataFilm?.overview }}
                             </p>
                         </div>
                     </div>
