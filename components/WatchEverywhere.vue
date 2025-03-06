@@ -72,8 +72,12 @@ const listOfGenres = [
             <div class="dropdown">
               <div tabindex="0" role="button" class=" m-1 dropdown-box dropdown-title">Popularity</div>
               <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-                <li><a>Item 1</a></li>
-                <li><a>Item 2</a></li>
+                <li><a>Popularity Ascending</a></li>
+                <li><a>Popularity Descending</a></li>
+                <li><a>Release Date Ascending</a></li>
+                <li><a>Release Date Descending</a></li>
+                <li><a>Rating Ascending</a></li>
+                <li><a>Rating Descending</a></li>
               </ul>
             </div>
           </div>

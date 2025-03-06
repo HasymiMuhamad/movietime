@@ -22,7 +22,6 @@ const images = detailData?.value?.results?.map( itm => {
 
 <template>
   <div class="bg-gradient-to-b from-transparent h-16"></div>
-  <!-- <div class="bg-base-36 h-[333px] w-full"></div> -->
   <section class="container bg-base-23 flex flex-col  items-center">
     <div class="flex flex-row justify-between w-full mb-12">
       <div class="flex-column ">

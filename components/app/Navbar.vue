@@ -35,12 +35,23 @@
       
       <div class="mr-2 hidden md:flex">
         <div class="hidden md:flex items-center">
-          <img src="@/images/categories-icon.png" class="w-6 h-6" />
-          <NuxtLink
-            to="/signin"
-            class="signup-button btn btn-secondary btn-ghost hover:bg-inherit btn-sm pr-8 rounded-none"
-            >Categories</NuxtLink
-          >
+          <img src="@/images/categories-icon.png" class="w-6 h-6 mb-[3px] pr-[-7px]" />
+          <div class="dropdown dropdown-hover">
+            <div tabindex="0" role="button" class=" m-1 dropdown-nav nav-item dropdown-title signup-button">Categories</div>
+            <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
+              <li><a>ACTION</a></li>
+              <li><a>ADVENTURE</a></li>
+              <li><a>ANIMATION</a></li>
+              <li><a>COMEDY</a></li>
+              <li><a>CRIME</a></li>
+              <li><a>DOCUMENTARY</a></li>
+              <li><a>DRAMA</a></li>
+              <li><a>FAMILY</a></li>
+              <li><a>FANTASY</a></li>
+              <li><a>HISTORY</a></li>
+              <li><a>HOROR</a></li>
+            </ul>
+          </div>
         </div>
         <NuxtLink
           to="/movies"
@@ -74,6 +85,28 @@
   font-family: Montserrat !important;
 }
 
+.dropdown-nav {
+  width: auto;
+  min-width: 220px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 17px;
+}
+
+.nav-item {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17.07px;
+  letter-spacing: 0%;
+  color: #E5E5E5;
+  text-transform: uppercase;
+  padding-left: 11px;
+  padding-bottom: 21px;
+}
+
 .dark-highlight {
   background: rgba(0, 0, 0, 0.3);
 }
@@ -91,7 +124,6 @@
 
 .navbar {
   background: #292E36;
-  /* height: 66px; */
   position: fixed;
   top: 0 ;
 }
